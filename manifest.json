@@ -2,10 +2,9 @@
   "manifest_version": 3,
   "name": "Find++",
   "description": "Find multiple terms on the current page with modes, colors, and quick navigation.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "action": {
-    "default_title": "Find++",
-    "default_popup": "src/popup/popup.html"
+    "default_title": "Find++ — Toggle find bar (⌘⇧F)"
   },
   "background": {
     "service_worker": "src/background/service-worker.js"
@@ -16,12 +15,12 @@
     "storage"
   ],
   "commands": {
-    "_execute_action": {
+    "toggle-find-bar": {
       "suggested_key": {
         "default": "Ctrl+Shift+F",
         "mac": "Command+Shift+F"
       },
-      "description": "Open Find++"
+      "description": "Toggle the Find++ bar on the current page"
     }
   },
   "icons": {
@@ -33,8 +32,8 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "src/content/highlighter.css",
-        "src/shared/search-core.js"
+        "src/shared/search-core.js",
+        "assets/icons/findpp.svg"
       ],
       "matches": [
         "<all_urls>"

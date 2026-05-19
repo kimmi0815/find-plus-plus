@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check src/background/service-worker.js && node --check src/popup/popup.js && node --check src/content/highlighter.js && node --check src/shared/search-core.js",
+    "check": "node --check src/background/service-worker.js && node --check src/content/findbar.js && node --check src/shared/search-core.js",
     "package": "mkdir -p release && zip -r release/find-plus-plus.zip manifest.json README.md assets src -x '*.DS_Store'"
   },
   "engines": {
