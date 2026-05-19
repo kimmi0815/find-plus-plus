@@ -1,0 +1,17 @@
+:root {
+  --findpp-active-outline: #0f172a;
+}
+
+mark.findpp-highlight {
+  background: var(--findpp-color, #ffd54f);
+  border-radius: 2px;
+  box-decoration-break: clone;
+  color: inherit;
+  padding: 0 1px;
+}
+
+mark.findpp-highlight.findpp-active {
+  outline: 2px solid var(--findpp-active-outline);
+  outline-offset: 1px;
+}
+

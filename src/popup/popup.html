@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Find++</title>
+    <link rel="stylesheet" href="./popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <img src="../../assets/icons/findpp.svg" width="24" height="24" alt="">
+          <div>
+            <h1>Find++</h1>
+            <p>Multi-keyword page find</p>
+          </div>
+        </div>
+        <span class="shortcut" title="Open Find++">⌘⇧F</span>
+      </header>
+
+      <section class="field">
+        <label for="terms">Keywords</label>
+        <textarea id="terms" rows="5" spellcheck="false" placeholder="deadline, assignment, due"></textarea>
+      </section>
+
+      <section class="panel" aria-label="Search settings">
+        <div class="segmented" role="group" aria-label="Match mode">
+          <button class="segment is-active" type="button" data-mode="or">OR</button>
+          <button class="segment" type="button" data-mode="and">AND</button>
+        </div>
+
+        <div class="toggles">
+          <label class="toggle">
+            <input id="exact" type="checkbox">
+            <span>Exact</span>
+          </label>
+          <label class="toggle">
+            <input id="caseSensitive" type="checkbox">
+            <span>Case</span>
+          </label>
+          <label class="toggle">
+            <input id="regex" type="checkbox">
+            <span>Regex</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="colors" aria-label="Keyword colors">
+        <div class="colors-head">
+          <span>Colors</span>
+          <span id="keywordCount">0 terms</span>
+        </div>
+        <div id="chips" class="chips" aria-live="polite"></div>
+      </section>
+
+      <section class="status" aria-live="polite">
+        <div>
+          <strong id="matchCount">0</strong>
+          <span id="matchLabel">matches</span>
+        </div>
+        <p id="message">Ready</p>
+      </section>
+
+      <footer class="actions">
+        <button id="clear" class="button quiet" type="button">Clear</button>
+        <div class="nav">
+          <button id="prev" class="button icon" type="button" title="Previous match" aria-label="Previous match">↑</button>
+          <button id="next" class="button icon" type="button" title="Next match" aria-label="Next match">↓</button>
+        </div>
+        <button id="apply" class="button primary" type="button">Highlight</button>
+      </footer>
+    </main>
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>

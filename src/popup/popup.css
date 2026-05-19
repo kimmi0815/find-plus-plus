@@ -1,0 +1,305 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --text: #142033;
+  --muted: #657184;
+  --line: #dbe2ec;
+  --accent: #1769ff;
+  --accent-2: #0f55d8;
+  --shadow: 0 18px 48px rgba(29, 43, 67, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 360px;
+  max-width: 360px;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+.shell {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(246, 248, 251, 0.96)),
+    var(--bg);
+}
+
+.topbar,
+.brand,
+.colors-head,
+.actions,
+.nav,
+.toggles {
+  display: flex;
+  align-items: center;
+}
+
+.topbar,
+.colors-head,
+.actions {
+  justify-content: space-between;
+}
+
+.brand {
+  gap: 9px;
+}
+
+.brand img {
+  flex: 0 0 auto;
+  filter: drop-shadow(0 4px 9px rgba(23, 105, 255, 0.22));
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.brand p,
+.shortcut,
+.colors-head,
+.status p {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.shortcut {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 3px 7px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.field,
+.panel,
+.colors,
+.status {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.72) inset;
+}
+
+.field {
+  padding: 9px;
+}
+
+label {
+  display: block;
+}
+
+.field label {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+textarea {
+  width: 100%;
+  min-height: 116px;
+  resize: vertical;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+}
+
+textarea::placeholder {
+  color: #9aa5b4;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 8px;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.segment {
+  min-width: 58px;
+  border: 0;
+  padding: 6px 9px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+}
+
+.segment + .segment {
+  border-left: 1px solid var(--line);
+}
+
+.segment.is-active {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.toggles {
+  gap: 6px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0 7px;
+  color: var(--muted);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 13px;
+  height: 13px;
+  accent-color: var(--accent);
+}
+
+.colors {
+  padding: 8px;
+}
+
+.colors-head {
+  margin-bottom: 7px;
+  font-weight: 700;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 24px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 148px;
+  border: 1px solid rgba(20, 32, 51, 0.08);
+  border-radius: 999px;
+  padding: 4px 8px 4px 5px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.swatch {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  border-radius: 50%;
+  border: 1px solid rgba(20, 32, 51, 0.2);
+}
+
+.chip span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.empty {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.status {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px;
+}
+
+.status strong {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.status span {
+  color: var(--muted);
+}
+
+.actions {
+  gap: 8px;
+}
+
+.nav {
+  gap: 6px;
+  margin-left: auto;
+}
+
+.button {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 12px;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: #c4cfdd;
+}
+
+.button:focus-visible,
+.segment:focus-visible,
+.toggle:focus-within,
+textarea:focus-visible {
+  outline: 2px solid rgba(23, 105, 255, 0.34);
+  outline-offset: 2px;
+}
+
+.button.icon {
+  width: 34px;
+  padding: 0;
+  font-size: 15px;
+}
+
+.button.primary {
+  border-color: var(--accent);
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  box-shadow: var(--shadow);
+  font-weight: 700;
+}
+
+.button.quiet {
+  color: var(--muted);
+}
+
+.button:disabled {
+  cursor: default;
+  opacity: 0.52;
+}
